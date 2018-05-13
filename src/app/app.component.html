@@ -1,0 +1,67 @@
+<div class="container">
+  <nav class="main-nav">
+    <ul class="main-nav__list">
+      <li class="main-nav__list-item"><a href='#home' class="main-nav__link-item">Start</a></li>
+      <li class="main-nav__list-item"><a href='#portfolio' class="main-nav__link-item">Portfolio</a></li>
+      <li class="main-nav__list-item" dropdown>
+        <a href='#calendar' class="main-nav__link-item" dropdown-trigger>Calendar</a>
+        <ul class='sub-menu-nav'>
+          <li class='sub-menu-nav__link'><a href='#event_one' class='sub-menu-nav__link-item'>Event #1</a></li>
+          <li class="sub-menu-nav__link"><a href='#event_two' class='sub-menu-nav__link-item'>Event #2</a></li>
+          <li class="sub-menu-nav__link"><a href='#event_three' class='sub-menu-nav__link-item'>Event #3</a></li>
+        </ul>
+      </li>
+      <li class="main-nav__list-item"><a href='#resume' class="main-nav__link-item">Resume</a></li>
+      <li class="main-nav__list-item"><a href='#blog' class="main-nav__link-item">Blog</a></li>
+      <li class="main-nav__list-item"><a href='#home' class="main-nav__link-item">End</a></li>
+    </ul>
+  </nav>
+
+  <header class="header">
+    <div class="header__nav">
+      <nav class="account-setting">
+        <ul class="account-setting__list">
+          <li class="account-setting__list-item">
+            <div class="user-info">
+              <div class="user-info__avatar"><img src="" alt=""></div>
+              <div class="user-info__name">
+                <p>Nika_SDF</p>
+                <p>#479608</p>
+              </div>
+            </div>
+          </li>
+          <li class="account-setting__list-item"><a href="#" class="account-setting__link-item account-setting__link-item--green">Депозит</a></li>
+          <li class="account-setting__list-item" dropdown>
+            <div class="account-setting__link-item account-setting__link-item--gray" [dropdown-trigger]='addClassName("account-setting__list-item--open")'>Счет</div>
+            <div class="user-counter">
+              <div class="user-counter__header">
+                <div class="user-counter__header-link">Основной</div>
+                <div class="user-counter__header-link">Покер</div>
+              </div>
+              <div class="user-counter__info">
+                <div class="user-info">
+                  <div class="user-info__avatar"><img src="" alt=""></div>
+                  <div class="user-info__name">
+                    <p>Nika_SDF</p>
+                    <p>#479608</p>
+                  </div>
+                </div>
+              </div>
+              <div class="user-counter__setting">
+                <ul class="nav__list">
+                  <li class="nav__list-item"><a href="#" class="nav__link-item">Управление Балансом</a></li>
+                  <li class="nav__list-item"><a href="#" class="nav__link-item">Персональная Информация</a></li>
+                  <li class="nav__list-item"><a href="#" class="nav__link-item">История Транзакций</a></li>
+                  <li class="nav__list-item"><a href="#" class="nav__link-item">Мои Бонусы</a></li>
+                </ul>
+              </div>
+              <div class="user-counter__logout">
+                <div class="user-counter__logout-link">Выход</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>

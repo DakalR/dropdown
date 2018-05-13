@@ -1,0 +1,280 @@
+$accent: #ffce54
+$white: #fff
+$accent: #ffce54
+$black: #000
+$gray: #ccc
+$dark_gray: darken($gray, 20%)
+$light_gray: lighten($gray, 20%)
+
+//mixin
+
+@mixin hocus
+  &:hover, &:focus
+    @content
+
+.main-nav
+  display: inline-block
+  background: $white
+  border-radius: 3px
+  border-top: 2px solid $accent
+  height: 60px
+  &__list
+    list-style: none
+    margin: 0
+    padding: 0
+    &-item
+      position: relative
+      display: inline-block
+      height: 60px
+      border-left: 1px solid fade($black, 5%)
+      vertical-align: middle
+      float: left
+      &:first-child,
+      &:nth-child(2),
+      &:last-child
+        border-left: 0
+
+      &:nth-child(2)
+        > a
+          &:before
+            z-index: 1
+            position: absolute
+            top: 0
+            left: -15px
+            content: ''
+            width: 0
+            height: 0
+            display: block
+            border-right: 15px solid $white
+            border-top: 60px solid transparent
+
+
+
+      &:nth-last-child(2)
+        a
+          &:after
+            position: absolute
+            z-index: 1
+            top: 0
+            right: -15px
+            content: ''
+            width: 0
+            height: 0
+            display: block
+            border-left: 15px solid $white
+            border-bottom: 60px solid transparent
+
+      &:first-child,
+      &:last-child
+        a
+          background: $accent
+          padding: 0 25px 0 30px
+          color: $white
+          &:hover
+            background: $accent
+
+
+
+      a
+        position: relative
+        display: block
+        padding: 0 25px
+        color: $black
+        font-size: 14px
+        line-height: 60px
+        text-decoration: none
+        &:hover
+          background: darken($white, 5%)
+          &:before
+            border-right: 15px solid darken($white, 5%)
+
+          &:after
+            border-left: 15px solid darken($white, 5%)
+        i
+          margin: 0 0 0 6px
+
+
+.sub-menu-nav
+  opacity: 0
+  visibility: hidden
+  position: absolute
+  background: $white
+  top: 100%
+  width: 180px
+  border-top: 1px solid fade($black, 5%)
+  border-bottom: 3px solid $accent
+  border-radius: 0 0 3px 3px
+  overflow: hidden
+  transition: opacity 0.5s ease, visibility 0.5s ease
+  li
+    display: block
+    width: 100%
+    height: 45px
+    margin: 0
+    border-bottom: 1px solid fade($black, 5%)
+    &:nth-child(2),
+    &:nth-last-child(2)
+      height: 45px
+      a
+        &:before,
+        &:after
+          content: ''
+          display: none
+
+
+
+    a
+      background: $white
+      padding: 0 15px 0 30px
+      color: $black
+      line-height: 45px
+      text-align: left
+      &:hover
+        background: darken($white, 5%)
+
+
+.open
+  .sub-menu-nav
+    visibility: visible
+    opacity: 1
+    display: block
+
+
+.header
+  width: 100%
+  height: 80px
+  background: #1f1d28
+
+.header__nav
+  width: 90%
+  height: 100%
+  margin: 0 auto
+  position: relative
+
+.account-setting
+  position: absolute
+  right: 0
+  height: 100%
+  display: inline-block
+
+.account-setting__list
+  margin: 0
+  list-style-type: none
+  display: flex
+  width: 100%
+  height: 100%
+  justify-content: center
+  align-items: center
+
+.account-setting__list-item
+  color: #fff
+  text-decoration: none
+  position: relative
+  font-size: 18px
+  z-index: 9
+  margin-right: 10px
+  &:last-child
+    margin-right: 0
+
+  &--open
+    .user-counter
+      opacity: 1
+      height: auto
+      visibility: visible
+
+.account-setting__link-item
+  display: inline-block
+  padding: 10px
+  font-size: 15px
+  border-radius: 5px
+  text-decoration: none
+  color: $white
+  text-transform: uppercase
+  cursor: pointer
+  &--green
+    background: #3baa36
+
+  &--gray
+    background: #333d48
+
+
+.user-counter
+  width: 300px
+  background: #333d48
+  position: absolute
+  margin-top: 20px
+  right: -17%
+  border-radius: 2px
+  height: 0
+  opacity: 0
+  visibility: hidden
+  transition: height 0.5s ease, opacity 0.5s ease
+  &:before
+    display: block
+    right: 44px
+    content: " "
+    height: 0
+    top: -11px
+    width: 0
+    position: absolute
+    border-left: 6px solid transparent
+    border-right: 6px solid transparent
+    border-bottom: 11px solid #333d48
+
+  &__header
+    padding: 10px 0 30px 30px
+
+  &__header-link
+    display: inline-block
+    width: 49%
+    text-align: left
+    color: #5a778c
+    cursor: pointer
+    transition: color 0.5s ease
+    @include hocus
+      color: lighten(#5a778c, 20%)
+      text-decoration: underline
+
+  &__info
+    background: #222a35
+    padding: 15px 0 20px 50px
+
+  &__setting
+    padding: 15px 0 10px 30px
+
+  &__logout
+    padding: 20px 0 20px 30px
+    cursor: pointer
+
+.nav__list
+  list-style-type: none
+  margin: 0
+
+.nav__link-item
+  display: block
+  color: #5a778c
+  text-decoration: none
+  padding: 5px 0
+
+.user-info__avatar
+  display: inline-block
+  width: 30px
+  height: 30px
+  background: #fff
+  vertical-align: bottom
+  margin-right: 10px
+  border-radius: 50%
+
+.user-info__name
+  display: inline-block
+  p
+    text-transform: uppercase
+    font-size: 15px
+    &:nth-child(1)
+      color: $white
+    &:nth-child(2)
+      color: #8e9299
+
+
+
+
